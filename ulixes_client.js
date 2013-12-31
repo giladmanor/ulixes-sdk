@@ -61,7 +61,9 @@ function plotNode(cluster) {
 
 function plotBadges(data) {
 	//clean badges
-	
+	$(".ulixes-badge").each(function(){
+		$(this).text("");
+	});
 	data.badges.map(function(k) {
 		$(".ulixes-badge-" + k.placeholder).append("<img src='" + ulixes_server + k.icon + "' title='" + k.name + "'>");
 	});
