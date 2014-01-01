@@ -1,11 +1,6 @@
 <?php
 include_once ("ulixes_conf.php");
 include_once ("ulixes_client.php");
-$token = "";
-if (isset($_GET['id'])) {
-	$uuid = $_GET['id'];
-	$token = ulixes_get_token($uuid);
-}
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +12,9 @@ if (isset($_GET['id'])) {
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="ulixes_client.js"></script>
-		<script>var ulixes_server =                       '<?php echo ULIXES_SERVER?>
-	';
-	ulixes_token('
-<?php echo $token?>
-	');
+		<script>
+			var cnt = new Ulixes('<?php echo ULIXES_SERVER?>','<?php echo $token?>');
+			
 		</script>
 
 	</head>

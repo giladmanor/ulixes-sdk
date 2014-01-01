@@ -1,14 +1,10 @@
-var Ulixes = function(token, server, dataHandler) {
+var Ulixes = function(server, token, dataHandler) {
 	var self = this;
 	this.token = token;
 	this.server = server;
 
-	if (( typeof dataHandler === "undefined") || !dataHandler) {
-		this.dataHandler = defaultDataHandler;
-	}
-
 	function use_token(token) {
-		self.send("use_token", {
+		send("use_token", {
 			t : token,
 			with_info : true
 		});
@@ -16,11 +12,11 @@ var Ulixes = function(token, server, dataHandler) {
 
 
 	this.get = function() {
-		self.send("get", {});
+		send("get", {});
 	};
 
 	this.set = function(code, value) {
-		self.send("set", {
+		send("set", {
 			code : code,
 			value : value,
 			with_info : true
@@ -68,12 +64,42 @@ var Ulixes = function(token, server, dataHandler) {
 			}
 		}
 
+
+		console.log("defaultDataHandler");
 		plotBadges(data);
 		plotScores(data);
 		plotNotifications(data);
 	};
-
+	if (( typeof dataHandler === "undefined") || !dataHandler) {
+		this.dataHandler = defaultDataHandler;
+	}else{
+		this.dataHandler = dataHandler;
+	}
 	use_token(token);
 
 };
 
+var testerDataHandler = function(data) {
+
+	$(".ulixes-badge").text("");
+
+	data.badges.map(function(k) {
+		$(".ulixes-badge").append("<li><img src='" + ulixes_server + k.icon + "' title='" + k.name + "'></li>");
+	});
+
+	data.scores.map(function(k) {
+		$(".ulixes-score-" + k.code).text(k.value);
+	});
+
+	$('.ulixes-announcements').text("");
+	$('.ulixes-announcements-count').text(data.announcements ? data.announcements.length : 0);
+	for (var i = 0; i < data.announcements.length; i += 1) {
+		$('.ulixes-announcements').append(data.announcements[i].message + "<br/>");
+	}
+	if (data.announcements.length == 0) {
+		$('.ulixes-announcements').html("No New Notifications");
+	}
+
+	console.log("testerDataHandler");
+
+}; 

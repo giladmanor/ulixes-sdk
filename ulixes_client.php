@@ -43,4 +43,11 @@ $data=array('uuid'=>$uid);
 $url=getURLWithParams("get",$data);
 return json_decode(execute_cURL($url));
 }
+
+$token = "";
+$uuid = "";
+if (isset($_GET['id'])) {
+	$uuid = $_GET['id'];
+	$token = ulixes_get_token($uuid);
+}
 ?>

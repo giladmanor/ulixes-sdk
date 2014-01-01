@@ -46,9 +46,9 @@
 			</li>
 
 		</ul>
-		<form class="navbar-form navbar-left" role="search" action="/">
+		<form class="navbar-form navbar-left" role="search" action="">
 			<div class="form-group">
-				<input name="id" type="text" class="form-control" placeholder="User Identifier">
+				<input name="id" type="text" class="form-control" placeholder="User Identifier" value="<?php echo $uuid ?>">
 			</div>
 			<button type="submit" class="btn btn-default">
 				Send
