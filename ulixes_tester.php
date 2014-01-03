@@ -24,24 +24,54 @@ include_once ("ulixes_client.php");
 		<?php
 		include_once ("ulixes_controle_bar.php");
 		?>
+		<div class="pull-right">
+			<div class="chartGoesHere"></div>
+			
+			<div class="text-muted" style="margin-top: -237px;margin-left: 178px;">
+				<strong>User Vector</strong>
+			</div>
+			<div class="actionChartGoesHere" style="margin-top: -163px;margin-left: 65px;"></div>
+			<div class="alert alert-info" style="margin-top: 159px;">
+				<form class="form-inline" role="form" onsubmit="cnt.set($('#code').val(),$('#value').val());return false;">
+					<div class="form-group ">
+						<input name="code" id="code" type="text" class="form-control" placeholder="code" value="a">
+					</div>
+					<div class="form-group ">
+						<input name="value" id="value" type="text" class="form-control" placeholder="value" value="1">
+					</div>
+					<button type="submit" class="btn btn-default">
+						Send
+					</button>
+				</form>
+			</div>
+		</div>
+		<div class="row pull-left">
+			<div class=" col-xs-6">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						Badges
+					</div>
+					<div class="panel-body">
+						<ul class="list-unstyled  ulixes-badge">
+							nothing
+						</ul>
+					</div>
 
-		<ul class="list-unstyled pull-left ulixes-badge">nothing</ul>
-		
-		
-		<div class="pull-right"><div class="chartGoesHere"></div><div class="text-muted" style="margin-top: -240px;margin-left: 183px;"><strong>User Vector</strong></div></div>
-		
-		<div class="pull-left">
-			<form class="navbar-form navbar-left" role="search" onsubmit="cnt.set($('#code').val(),$('#value').val());return false;">
-			<div class="form-group ">
-				<input name="code" id="code" type="text" class="form-control" placeholder="code" value="a">
+				</div>
 			</div>
-			<div class="form-group ">
-				<input name="value" id="value" type="text" class="form-control" placeholder="value" value="1">
+			<div class=" col-xs-6">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						Notifications
+					</div>
+					<div class="panel-body">
+						<ul class="list-unstyled ulixes-announcements" style="overflow: auto">
+							nothing
+						</ul>
+					</div>
+
+				</div>
 			</div>
-			<button type="submit" class="btn btn-default">
-				Send
-			</button>
-		</form>
 		</div>
 
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
