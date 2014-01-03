@@ -16,8 +16,8 @@ include_once ("ulixes_client.php");
 		
 		
 		</script>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
-
+		<!-- <script src="http://d3js.org/d3.v3.min.js"></script> -->
+		<script src="d3.min.js"></script>
 	</head>
 	<body>
 
@@ -31,7 +31,7 @@ include_once ("ulixes_client.php");
 				<strong>User Vector</strong>
 			</div>
 			<div class="actionChartGoesHere" style="margin-top: -163px;margin-left: 65px;"></div>
-			<div class="alert alert-info" style="margin-top: 159px;">
+			<div class="alert alert-info" style="margin-top: 20px;">
 				<form class="form-inline" role="form" onsubmit="cnt.set($('#code').val(),$('#value').val());return false;">
 					<div class="form-group ">
 						<input name="code" id="code" type="text" class="form-control" placeholder="code" value="a">
