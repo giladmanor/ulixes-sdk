@@ -45,8 +45,22 @@ include_once ("ulixes_client.php");
 				</form>
 			</div>
 		</div>
-		<div class="row pull-left">
-			<div class=" col-xs-6">
+		<div class="row " style="margin-left: 1px">
+			
+			<div class=" col-xs-2">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						Location on Graph
+					</div>
+					<div class="panel-body ulixes-node">
+						
+					</div>
+
+				</div>
+			</div>
+			
+			
+			<div class=" col-xs-2">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						Badges
@@ -72,6 +86,8 @@ include_once ("ulixes_client.php");
 
 				</div>
 			</div>
+			
+			
 		</div>
 
 		<!-- Include all compiled plugins (below), or include individual files as needed -->

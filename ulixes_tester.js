@@ -1,4 +1,5 @@
-function drawD3(data) {
+
+function drawD3(data) { // Draw Bagel for scores
 	console.log("draw D3:::", data);
 	$(".chartGoesHere").text("");
 	var width = 430, height = 450, radius = Math.min(width, height) / 2;
@@ -22,7 +23,7 @@ function drawD3(data) {
 		return d.data.name + "(" + d.value + ")";
 	});
 };	
-function drawD4(data) {
+function drawD4(data) { // Draw Bagel for activities
 	console.log("draw D3:::", data);
 	$(".actionChartGoesHere").text("");
 	var width = 300, height = 300, radius = Math.min(width, height) / 2;
@@ -49,6 +50,8 @@ function drawD4(data) {
 	
 };
 var testerDataHandler = function(data, server) {
+	$(".ulixes-node").text(data.node.name);
+	
 	$(".ulixes-badge").text("");
 	data.badges.map(function(k) {
 		$(".ulixes-badge").append("<li><img height='60' class='img-circle' width='60' src='" + server + k.icon + "' title='" + k.name + "'> <span class='badge'>" + k.name + "</span></li>");
