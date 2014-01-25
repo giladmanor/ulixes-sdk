@@ -27,11 +27,11 @@ include_once ("ulixes_client.php");
 			<div class="text-muted" style="margin-top: -232px;margin-left: 140px;">
 				<h2>User Vector</h2>
 			</div>
-			<div style="margin-top: 0px;margin-left: 178px;">
+			<div style="margin-top: 0px;margin-left: 140px;width: 150px;text-align: center;">
 				<strong class="ulixes-node"></strong>
 			</div>
-
-			<div class="col-xs-5 alert alert-info" style="margin-top: 167px;">
+			<div class="badgesCloud" style=" margin-top: -195px; width: 300px; margin-left: 350px; height: 384px;"></div>
+			<div class="col-xs-5 alert alert-info" style="margin-top: -20px;">
 				<form class="form-inline" role="form" onsubmit="cnt.set($('#code').val(),$('#value').val());return false;">
 					<div class="form-group ">
 						<input name="code" id="code" type="text" class="form-control" placeholder="code" value="a">
@@ -44,7 +44,7 @@ include_once ("ulixes_client.php");
 					</button>
 				</form>
 			</div>
-			<div class=" col-xs-4" style=" float: right; margin-top: -195px; ">
+			<div class=" col-xs-4" style=" float: right; margin-top: -400px; ">
 				<div class="panel panel-info">
 					<div class="panel-heading">
 						Notifications
@@ -57,26 +57,10 @@ include_once ("ulixes_client.php");
 
 				</div>
 			</div>
-			<div class=" col-xs-2" style=" float: right; margin-top: -195px; ">
-				<div class="panel panel-info">
-					<div class="panel-heading">
-						Badges
-					</div>
-					<div class="panel-body">
-						<ul class="list-unstyled  ulixes-badge">
-							nothing
-						</ul>
-					</div>
-
-				</div>
-			</div>
-		</div>
-		<div class="" style="margin-left: 1px">
-
 			
 			
-
 		</div>
+		
 
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>

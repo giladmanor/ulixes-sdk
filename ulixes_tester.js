@@ -47,6 +47,47 @@ function drawD4(data) {// Draw Bagel for activities
 	});
 
 };
+
+function badges(data,server) {
+	console.log("Badges: ", data);
+	
+	var width = 300, height = 350;
+	$(".badgesCloud").text("");
+	var svg = d3.select(".badgesCloud").append("svg").attr("width", width).attr("height", height);
+
+	var force = d3.layout.force().gravity(.05).distance(100).charge(-100).size([width, height]);
+	force.nodes(data).start();
+
+	//var link = svg.selectAll(".link").data(data.links).enter().append("line").attr("class", "link");
+
+	var node = svg.selectAll(".node").data(data).enter().append("g").attr("class", "node").call(force.drag);
+
+	node.append("image").attr("xlink:href", function(d){
+		return server + d.icon;
+	}).attr("x", -25).attr("y", -20).attr("width", 100).attr("height", 100);
+
+	node.append("text").attr("dx", 12).attr("dy", ".35em").text(function(d) {
+		return d.name;
+	});
+
+	force.on("tick", function() {
+		// link.attr("x1", function(d) {
+			// return d.source.x;
+		// }).attr("y1", function(d) {
+			// return d.source.y;
+		// }).attr("x2", function(d) {
+			// return d.target.x;
+		// }).attr("y2", function(d) {
+			// return d.target.y;
+		// });
+
+		node.attr("transform", function(d) {
+			return "translate(" + d.x + "," + d.y + ")";
+		});
+	});
+
+}
+
 var testerDataHandler = function(data, server) {
 	$(".ulixes-node").text(data.node.name);
 
@@ -65,11 +106,12 @@ var testerDataHandler = function(data, server) {
 	} else {
 		$('.ulixes-announcements').html("");
 		data.announcements.map(function(k) {
-			$('.ulixes-announcements').append("<li>"+k.data.message+"</li>");
+			$('.ulixes-announcements').append("<li>" + k.data.message + "</li>");
 		});
 
 	}
 	console.log("testerDataHandler processing:", data);
+	badges(data.badges,server);
 	drawD3(data.scores);
 	drawD4(data.actions);
 };
