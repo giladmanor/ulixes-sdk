@@ -64,9 +64,9 @@ function badges(data,server) {
 
 	node.append("image").attr("xlink:href", function(d){
 		return server + d.icon;
-	}).attr("x", -25).attr("y", -20).attr("width", 100).attr("height", 100);
+	}).attr("x", -25).attr("y", 0).attr("width", 100).attr("height", 100);
 
-	node.append("text").attr("dx", 12).attr("dy", ".35em").text(function(d) {
+	node.append("text").attr("dx", 0).attr("dy", ".35em").text(function(d) {
 		return d.name;
 	});
 
