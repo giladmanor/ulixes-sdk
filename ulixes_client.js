@@ -22,6 +22,13 @@ var Ulixes = function(server, token, dataHandler) {
 			with_info : true
 		});
 	};
+	
+	this.read = function(id) {
+		send("read", {
+			id : id,
+			with_info : true
+		});
+	};
 
 	var send = function(action, data) {
 		$.ajax({

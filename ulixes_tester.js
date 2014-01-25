@@ -88,6 +88,12 @@ function badges(data,server) {
 
 }
 
+function message(id,data){
+	return '<div class="list-group"><a href="#" class="list-group-item"><h4 class="list-group-item-heading">'+data.subject+
+		'<span class="glyphicon glyphicon-remove pull-right" onclick="cnt.read('+id+')"></span>'+
+		'</h4><p class="list-group-item-text">'+data.message+'</p></a></div>';
+}
+
 var testerDataHandler = function(data, server) {
 	$(".ulixes-node").text(data.node.name);
 
@@ -106,7 +112,7 @@ var testerDataHandler = function(data, server) {
 	} else {
 		$('.ulixes-announcements').html("");
 		data.announcements.map(function(k) {
-			$('.ulixes-announcements').append("<li>" + k.data.message + "</li>");
+			$('.ulixes-announcements').append(message(k.id,k.data));
 		});
 
 	}
