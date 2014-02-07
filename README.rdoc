@@ -1,0 +1,9 @@
+=ulixes-sdk
+
+This is a complimentory project for Ulixes.io
+
+
+Ulixes SDK Installation and Usage
+Make sure you have a PHP enabled server with CURL plugin
+Download and extract the ZIP or TAR file containing the Ulixes SDK project
+Configure your account details in ulixes_conf.php
