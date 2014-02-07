@@ -3,7 +3,48 @@
 This is a complimentory project for Ulixes.io
 
 
-Ulixes SDK Installation and Usage
-Make sure you have a PHP enabled server with CURL plugin
-Download and extract the ZIP or TAR file containing the Ulixes SDK project
-Configure your account details in ulixes_conf.php
+==Ulixes SDK Installation and Usage
+* Make sure you have a PHP enabled server with CURL plugin
+* Download and extract the (ZIP)[https://github.com/giladmanor/ulixes-sdk/zipball/master] or (TAR)[https://github.com/giladmanor/ulixes-sdk/tarball/master] file containing the Ulixes project
+* Configure your account details in *ulixes_conf.php*
+
+
+    <?php
+    define("ULIXES_ACCOUNT","1");
+    define("ULIXES_KEY","1");
+    define("ULIXES_SERVER","http://localhost:3000/");
+    ?>
+    
+
+* Use server side code to initiate a user session by including ulixes_client.php and instigating the *ulixes_get_token($uuid)* where uuid is your own identifier for the user
+for example:
+
+    <?php
+    $token = "";
+    $uuid = "";
+    if (isset($_GET['id'])) {
+       $uuid = $_GET['id'];
+       $token = ulixes_get_token($uuid);
+    }
+    ?>
+
+* On the JavaScript side, Initiate the Ulixes client object by first, including *ulixes_client.js* into your code
+    <script src="ulixes_client.js"></script>
+Then initiate the client object
+    var cnt=new Ulixes('<?php echo ULIXES_SERVER?>','<?php echo $token?>',testerDataHandler);
+Where *testerDataHandler* can be replaced by your own handler. if no handler is specified, the default handler will kick in
+
+====Using the default handler:
+the default handler searches for specific CSS classes in the dom and injects the parsonal data there.
+for example, showing a badge requires a dom object with a class 
+    .ulixes-badge .ulixes-badge-[badge group name]
+displaying a user score:
+    .ulixes-score-[scale name]
+
+
+
+
+
+
+
+
