@@ -7,7 +7,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#" data-toggle="popover" data-original-title="a" data-content="something" data-placement="bottom" onmouseover="$(this).popover('show')" onmouseout="$(this).popover('hide')">Ulixes Demo Bar</a>
+		<a class="navbar-brand" href="#" data-toggle="popover" data-original-title="Ulixes Engine" data-content="By one Lazy-eye Developer" data-placement="bottom" onmouseover="$(this).popover('show')" onmouseout="$(this).popover('hide')">Ulixes Demo Bar</a>
 		
 	</div>
 
