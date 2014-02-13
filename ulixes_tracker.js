@@ -74,7 +74,7 @@ var Ulixes = function(server, auth, dataHandler) {
 		}
 
 
-		console.log("defaultDataHandler");
+		//console.log("defaultDataHandler");
 		plotBadges(data);
 		plotScores(data);
 		plotNotifications(data);
