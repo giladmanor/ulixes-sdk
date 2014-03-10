@@ -2,7 +2,7 @@
 function getURLWithParams($apiCall, $data) {
 	$fields_string = '';
 	foreach ($data as $key => $value) {
-		$fields_string .= $key . '=' . urlencode($value) . '&';
+		$fields_string .= $key . '=' . $value . '&';
 	}
 	rtrim($fields_string, '&');
 	$ready_url = ULIXES_SERVER . "api/" . $apiCall . "?" . "a_id=" . ULIXES_ACCOUNT . "&k=" . ULIXES_KEY . "&" . $fields_string;
