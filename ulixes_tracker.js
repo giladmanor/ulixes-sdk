@@ -1,7 +1,7 @@
 var Ulixes = function(server, auth, dataHandler) {
 	
 	this.open = function(uid){
-		self.auth.uid = uid;
+		self.auth.uuid = uid;
 		get(self.auth);
 	};
 
