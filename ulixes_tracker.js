@@ -125,8 +125,9 @@ var Ulixes = function(server, auth, dataHandler) {
 
 };
 
-var ulixes = new Ulixes("http://bozz.wikibrains.com/", {
-	a_id : 3,
-	k : "aaBzqa5vKxQPInhDKpLfKzgkuWzQvnj1Ma9GXLQq9uglcUYa0I"
+$(function() {
+    window.ulixes = new Ulixes("http://your Ulixes server/", {
+		a_id : 1,
+		k : "a"
+    });
 });
-
